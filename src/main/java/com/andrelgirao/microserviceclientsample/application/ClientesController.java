@@ -3,6 +3,7 @@ package com.andrelgirao.microserviceclientsample.application;
 import com.andrelgirao.microserviceclientsample.application.application.ClientesService;
 import com.andrelgirao.microserviceclientsample.application.representation.ClienteInput;
 import com.andrelgirao.microserviceclientsample.domain.Cliente;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("clientes")
+@Slf4j
 public class ClientesController {
 
     @Autowired
@@ -19,6 +21,7 @@ public class ClientesController {
 
     @GetMapping
     public String status() {
+        log.info("Obtendo o status do microservice de clientes");
         return "ok";
     }
 
